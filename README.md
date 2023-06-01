@@ -85,6 +85,11 @@ Please review [our security policy](https://github.com/octobercms/october/securi
 	
 	composer install
 	
+	#Cria arquivo .env com as configurações
+	php artisan october:env
+
+	php artisan key:generate
+	
 	php artisan october:up
 	
 	chmod o+w ./storage/ -R
@@ -108,6 +113,4 @@ Please review [our security policy](https://github.com/octobercms/october/securi
 
 	service apache2 restart
 	
-	#Cria arquivo .env com as configurações
-	php artisan october:env
 ```
