@@ -73,3 +73,30 @@ The October CMS platform is open-sourced software licensed under the [MIT licens
 ## Security Vulnerabilities
 
 Please review [our security policy](https://github.com/octobercms/october/security/policy) on how to report security vulnerabilities.
+
+
+## Ajustes
+
+git clone git@github.com:pwerder/october1.git
+docker-compose up -d
+docker exec -it october1_app_1 /bin/bash
+composer install
+php artisan october:up
+chmod o+w ./storage/ -R
+nano /etc/apache2/apache2.conf
+De: 
+	<Directory /var/www/>
+		...
+		AllowOverride None
+		...
+	</Directory>
+Para:
+	<Directory /var/www/>
+		...
+		AllowOverride All
+		...
+	</Directory>
+a2enmod rewrite
+service apache2 restart
+Cria arquivo .env com as configurações
+ php artisan october:env
